@@ -1,0 +1,16 @@
+title A2
+actor "s : Scheduler" as s
+participant "p1 : Participant" as p1
+participant "p2 : Participant" as p2
+participant "zoomCall : ZoomCall" as zoom
+
+
+s->zoom: createZoomCall()
+
+p1->zoom : join()
+zoom-->p1 : success
+
+p2->zoom : join()
+zoom-->p2 : success
+
+

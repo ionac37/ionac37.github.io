@@ -1,0 +1,35 @@
+A1: 5
+
+At the VideoCall end of the association with Participant, you need multiplicity 0..1, because the question said that a participant could be in at most one video call.
+
+Really you should name the association (or alternatively the association ends).
+
+
+A2: 2
+
+Show the object creation as usual with a <<create>> message to a new lifeline, that starts at the point of creation.
+
+The source of both join messages should be the scheduler.
+
+join is a method on Participant, not ZoomCall: your messages are going in the wrong direction.
+
+B1: 3
+
+You need a start pseudostate with a transition into the not in call state.
+
+Arrow heads on transitions in state diagrams should be -> not LucidChart's default solid triangle or anything else.
+
+You've added operations not just attributes - and why is leave() in []?
+
+B2: 1
+
+You were told not to add things you didn't need, so you should not add a new attribute to represent whether the participant is in a call: that is already there in the property that is the association end connecting Participant to VideoCall in your class diagram.
+
+What you want on the transition is a guard in []: check you understand guards on state diagram transitions.
+
+Since the whole diagram is about a particular Participant, when you want to talk about a VideoCall you have to specify which one.
+
+Total: 11
+
+
+
