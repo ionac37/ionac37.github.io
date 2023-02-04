@@ -1,0 +1,12 @@
+title A2
+
+actor "s : Scheduler" as s
+participant "p1 : Parcticipant" as p1
+participant "p2 : Participant" as p2
+participant "z : ZoomCall" as z
+
+s->*z:
+s->p1: join(z)
+p1->z: connect(p1)
+s->p2: join(z)
+p2->z: connect(p2)

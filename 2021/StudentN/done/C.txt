@@ -1,0 +1,16 @@
+
+app.diagrams.net (Formally draw.io, searching for draw.io will redirect you too app.diagrams.net
+
+I previously posted on piazza about this as seen here: https://piazza.com/class/ktsjvmqcjf41i6?cid=30.
+
+I have used this software in the past as ann alternitve too lucid chart. It is very much similar to lucid chart and offers
+a very good UML toolkit and enables you start making UML documents in a few clicks. One benifit it has over Lucidchart is that
+its example diagrams are a lot more indepth.
+
+The main benifit that I found to using it is that it does not have a limit on the number of object that you can have in one diagarm this is something
+that I have had problems with when I use lucid chart for more complicated UML and ER diagrams.
+
+I ended up making notes for this exam using Draw.io because of the limitations lucid chart emposes on object numbers. I have attached a screenshot of the notes for C.png.
+
+
+

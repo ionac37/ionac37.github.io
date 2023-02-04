@@ -1,0 +1,23 @@
+A1: 5
+
+At the VideoCall end of the association with Participant, you need multiplicity 0..1, because the question said that a participant could be in at most one video call.
+
+A2: 3
+
+Show the object creation as usual with a <<create>> message to a new lifeline, that starts at the point of creation.
+
+B1: 3
+
+Arrow heads on transitions in state diagrams should be -> not LucidChart's default solid triangle or anything else.
+
+B2: 2
+
+You were told not to add things you didn't need, so you should not add a new attribute to represent whether the participant is in a call: that is already there in the property that is the association end connecting Participant to VideoCall in your class diagram.
+
+Note that context Participant inv: is not quite right: this whole state diagram is in the context of Participant (so you can assume that), and you are not defining an invariant of the class which is what inv: means.
+
+What you want on the transition is a guard in []: check you understand guards on state diagram transitions.
+
+Total: 13
+
+

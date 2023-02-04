@@ -1,0 +1,14 @@
+title A2
+actor Scheduler as s
+boundary ZoomCall
+participant p1
+participant p2
+
+
+Scheduler as s -> ZoomCall: createZoomCall()
+ZoomCall -> p1: joinCall()
+p1-->ZoomCall: successfully joined
+
+ZoomCall -> p2: joinCall()
+p2-->ZoomCall: successfully joined
+

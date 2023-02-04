@@ -1,0 +1,22 @@
+A1: 6
+
+Really you should name the association (or alternatively the association ends).
+
+A2: 3
+
+Show the object creation as usual with a <<create>> message to a new lifeline, that starts at the point of creation.
+
+B1: 3
+
+I wonder whether you really understand how history states work? You seem to be trying to duplicate its effect.
+
+B2: 0
+
+OCL: an attempt, but not close enough to correct for marks I'm afraid.
+
+You were told not to add things you didn't need, so you should not add a new attribute to represent whether the participant is in a call: that is already there in the property that is the association end connecting Participant to VideoCall in your class diagram.
+
+Total: 12
+
+
+

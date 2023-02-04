@@ -1,0 +1,6 @@
+Name: diagrams.net
+URL: https://www.diagrams.net/
+
+Why this tool is interesting:
+
+This tool is similar to Lucidchart that was used in the labs in the sense that is not indended as a UML drawing tool specifically, but provides preset shapes for different types of UML diagrams. It provides unlimited use free of charge, as opposed to Lucidchart which only allows up to 3 editable diagrams without a subscription. It has good integration with popular cloud storage solutions such as Google Drive and OneDrive. In addition to the browser version it also provides an offline downloadable version which is easier to access than the browser version. Some of its drawbacks is that it does not check UML diagrams for correctness as it was not designed exclusively for UML diagrams, and requires you to drag and drop shapes to produce a diagram. Both of these are in contrast to UmpleOnline which produces a much narrower range of diagrams but allows you to produce certain UML diagrams both by typing text and through a drag-and-drop UI and also ensures that some aspects of the diagram follow the UML standard.

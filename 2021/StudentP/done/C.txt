@@ -1,0 +1,5 @@
+Name: DrawIO 
+URL: https://app.diagrams.net/
+
+Why it is Interesting: Draw.io has no limit on the number of documents that can be written to the software unlike LucidChart. Additionally it follows the UML Spec more closely such as having hard edges to UML class boxes. However multiplicities are not built and must be written in text boxes. Furthermore each arrow is represented as its own shape therefore it is hard to change line type and arrowhead if you make a mistake. 
+The software is perhaps best suited for lightweight class diagrams in the initial software process rather than heavy documentation of design due to this lack of being able to change features quickly: making it insuitable for constant iterative design 

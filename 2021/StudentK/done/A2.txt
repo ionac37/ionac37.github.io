@@ -1,0 +1,22 @@
+title A2
+
+
+actor "s : Scheduler" as s
+actor "p1 : Participant" as p1
+actor "p2 : Participant" as p2
+
+participant "z : ZoomCall" as z
+
+s->s:create(ZoomCall z)
+create z
+
+s->p1:join(z)
+p1->z:enterCall()
+z-->p1:joinOK
+p1-->s:joinOK
+
+s->p2:join(z)
+p2->z:enterCall()
+z-->p2:joinOK
+p2-->s:joinOK
+

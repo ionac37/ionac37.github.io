@@ -1,0 +1,26 @@
+A1: 5
+
+You're showing interface realization with the dashed line, not generalization - given that VideoCall is an abstract class not an interface the latter is what you need.
+
+A2: 3
+
+The source of both join messages should be the scheduler.
+
+Check the notation for return arrows.
+
+B1: 1
+
+Be clear that the labels on your transitions are events, in this case, message calls. E.g. use exactly join(v), and where you invent new method names, use consistent capitalisation and make sure what you use on the transitions is exactly consistent with what you have in your class diagram and your note about what else you are adding.
+
+I wonder whether you really understand how history states work? You seem to be trying to duplicate its effect.
+
+B2: 0
+
+You were told not to add things you didn't need, so you should not add a new attribute to represent whether the participant is in a call: that is already there in the property that is the association end connecting Participant to VideoCall in your class diagram.
+
+OCL: an attempt, but not close enough to correct for marks I'm afraid.
+
+Total: 9
+
+
+

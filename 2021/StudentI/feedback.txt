@@ -1,0 +1,35 @@
+A1: 5
+
+You need a Generalization, shown with an unfilled triangle head, between ZoomCall, TeamsCall and VideoCall.
+
+Really you should name the association (or alternatively the association ends).
+
+A2: 1
+
+Missing types in lifelines: you need e.g. p1:Participant
+
+Use ordinary rectangular instances unless told otherwise - the robustness diagram symbols are not standard in UML.
+
+Show the object creation as usual with a <<create>> message to a new lifeline, that starts at the point of creation.
+
+It is the scheduler, not the call, that has to send messages to the participants.
+
+Use the join method that you already know about from A1.
+
+Don't forget the argument to join: you must pass the very same ZoomCall object that you just created.
+
+B1: 3
+
+Good
+
+B2: 0
+
+OCL: an attempt, but not close enough to correct for marks I'm afraid.
+
+Using oclIsInState is a bit circular! What we're trying to do here is "defining the state in terms of the object's properties".
+
+
+
+Total: 9
+
+

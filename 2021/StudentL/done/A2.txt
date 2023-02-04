@@ -1,0 +1,17 @@
+title A2
+
+actor "s:Scheduler" as s
+participant "p1:Participant" as p1
+participant "p2:Participant" as p2
+participant "ZoomCall:VideoCall" as VideoCall
+
+s->VideoCall:create(ZoomCall)
+s<--VideoCall:
+s->p1:add(p1)
+p1->VideoCall:join(ZoomCall)
+p1<--VideoCall:return True
+s<--p1:return True
+s->p2:add(p2)
+p2->VideoCall:join(ZoomCall)
+p2<--VideoCall:return True
+s<--p2:return True

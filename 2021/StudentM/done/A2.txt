@@ -1,0 +1,18 @@
+title A2
+
+actor "s:Scheduler" as s
+participant "z:ZoomCall" as z
+
+
+participant "p1:Participant" as p1
+participant "p2:Participant" as p2
+s-->*z:<<create ZoomCall>>
+
+
+
+z->p1:join()
+z<--p1:joined
+z->p2:join()
+z<--p2:joined
+s<--z:done
+destroy z

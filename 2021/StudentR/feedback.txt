@@ -1,0 +1,28 @@
+A1: 5
+
+At the VideoCall end of the association with Participant, you need multiplicity 0..1, because the question said that a participant could be in at most one video call.
+
+Really you should name the association (or alternatively the association ends).
+
+A2: 3
+
+Show the object creation as usual with a <<create>> message to a new lifeline, that starts at the point of creation.
+
+Don't forget the argument to join: you must pass the very same ZoomCall object that you just created.
+
+B1: 3
+
+There wasn't information about a transition to a final state, and it is not obligatory for state diagrams to have such transitions: don't invent.
+
+Arrow heads on transitions in state diagrams should be -> not LucidChart's default solid triangle or anything else.
+
+No event is needed on the transition from the start state (this is just object creation).
+
+B2: 0
+
+OCL: an attempt, but not close enough to correct for marks I'm afraid.
+
+Total: 11
+
+
+

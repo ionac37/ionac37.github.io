@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script defer src="script.js"></script> 
+  <style>
+    .text-color {
+      color: #0A335F;
+    }
+    .large {
+      font-size: large;
+    }
+    .startButton {
+      background-color: #C73238;
+      color:white;
+      width: 300px;
+      font-size: xx-large;
+    }
+    .helpButton {
+      border: 2px solid #0A335F;
+      border-radius: 200px;
+      font-size: medium;
+      margin-top: 30%;
+      background-color: #9CA9BA;
+    }
+    .background {
+      background-color: #f2f3f5;
+    }
+    a {
+        all: unset;
+    }
+    </style>
+</head>
+
+<body class="background">
+    <div class="container text-color">
+        <div class="page-header">
+            <div class="row justify-content-lg-center">
+                <div class="col-lg-4"> <img src="uofe.png" width="370" height="90"> </div>
+                <div class="col-lg-7 text-center"> <h3> <b> Software Design and Modelling (2022-2023)[SEM2] </b><br> 
+                    Lab Assessment Revision Quiz </h3> </div>
+                <a href="/help.html">
+                    <div class="col-lg-1"><button id="beginHelpButton" class="btn helpButton"><b>?</b></button></div>
+                </a>
+            </div> 
+        </div>   
+    </div>
+
+    <div class="container text-center">
+        <h2> <br><br><br>Thank you for completing the Software Design and Modelling <br> Lab Assessment revision quiz! <br><br></h2>
+        <div class="large"> Feel free to try it again at any time. <br><br>
+        </div>
+        <div>
+            <a href="/index.html">
+                <button id="beginButton" class="btn btn-lg startButton">Begin</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

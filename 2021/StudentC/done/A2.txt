@@ -1,0 +1,11 @@
+actor "s: Scheduler" as Scheduler
+participant "p1: Participant" as p1
+participant "p2: Participant" as p2
+
+
+Scheduler->Scheduler : z = s.createZoomCall()
+//creates a ZoomCall z
+Scheduler->p1:p1.join(ZoomCall z)
+Scheduler<<--p1:return true
+Scheduler->p2:p2.join(ZoomCall z)
+Scheduler<<--p2:return true

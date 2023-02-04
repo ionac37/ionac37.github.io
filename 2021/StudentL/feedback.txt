@@ -1,0 +1,31 @@
+A1: 6
+
+Really you should name the association (or alternatively the association ends).
+
+A2: 2
+
+ZoomCall is a class name not an instance name!
+
+Show the object creation as usual with a <<create>> message to a new lifeline, that starts at the point of creation.
+
+Use the join method that you already know about from A1.
+
+Why would a message ever have its own recipient as an argument?
+
+B1: 2
+
+Arrow heads on transitions in state diagrams should be -> not LucidChart's default solid triangle or anything else.
+
+Be clear that the labels on your transitions are events, in this case, message calls. E.g. use exactly join(v), and where you invent new method names, use consistent capitalisation and make sure what you use on the transitions is exactly consistent with what you have in your class diagram and your note about what else you are adding.
+
+B2: 1
+
+You were told not to add things you didn't need, so you should not add a new attribute to represent whether the participant is in a call: that is already there in the property that is the association end connecting Participant to VideoCall in your class diagram.
+
+What you want on the transition is a guard in []: check you understand guards on state diagram transitions.
+
+
+Total: 11
+
+
+

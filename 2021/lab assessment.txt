@@ -1,0 +1,43 @@
+A1
+In LucidChart draw a UML class diagram showing:
+• a class Participant with a private attribute name of type String and a public operation join taking a VideoCall as argument and returning a boolean
+• an abstract class VideoCall
+• concrete subclasses ZoomCall and TeamsCall of VideoCall
+• an appropriate relationship between VideoCall, ZoomCall and TeamsCall
+• an appropriate relationship between Participant and VideoCall, demonstrating that at any one time a given participant can be in at most one video call, while a video call may have any number of participants (including zero, say, to account for scheduled calls).
+
+======================================================================
+
+A2
+Using SequenceDiagram.org, draw a sequence diagram showing lifelines for an actor called s of type Scheduler and for two Participants called p1 and p2. Show that s creates a ZoomCall and then causes first p1 and then p2 to join it: show that they do so successfully.
+Your diagram should illustrate just the example behaviour described: do not use fragments, do not concern yourself with error behaviour. There is no need to show activation bars.
+
+======================================================================
+
+B1
+This multi-part question produces a single LucidChart diagram.
+Note: you will probably need to enrich the sets of attributes and operations of the Participant class slightly. Do not modify the class diagram you drew earlier. Instead, include in your diagram (e.g. as a Note, a UML comment) a list of any extra attributes and operations you need to add. Only add things you need in order to answer this question.
+1. In LucidChart, draw a nested state diagram for class Participant indicating that a participant can be in a call or not, and that if they are in a call, they may be muted or not. Make the mute setting “sticky” in the sense that if the participant leaves and then joins, they will be muted if and only if they were muted when they left. A newly-created Participant should not be on a call. The default state on entering a call for the first time should be muted.
+Include events on transitions, but do not include actions.
+
+======================================================================
+
+B2
+This multi-part question produces a single LucidChart diagram.
+Note: you will probably need to enrich the sets of attributes and operations of the Participant class slightly. Do not modify the class diagram you drew earlier. Instead, include in your diagram (e.g. as a Note, a UML comment) a list of any extra attributes and operations you need to add. Only add things you need in order to answer this question.
+2. In the same diagram, add:
+(a) An OCL constraint, placed in an appropriate state of your diagram, describing what it means that the participant is not in a call. (That is, defining the state in terms of the object’s properties.)
+(b) An OCL guard on the transition corresponding to the participant unmuting, to indicate that they can only do this if no other participant on the same call is unmuted.
+Your constraints may use any relevant properties from your Part A class diagram; if you need to use extra properties, make sure they are included in the Note mentioned above.
+
+======================================================================
+
+C
+REMINDER: This part is intended for students in the upper reaches of the University Standard Marking Scale. It is aimed at students who have found Parts A and B easy and done them quickly. It will only be marked if your answers to Parts A and B have already secured you a first-class mark! So you are strongly advised not to attempt it until you are sure you have done as well as you can on Parts A and B.
+Recall the investigation into tools that you did as part of the Week 4 lab. Pick one UML tool (not one of those mentioned in the Week 2 or Week 3 labs) which you investigated and found particularly interesting for some reason. Perhaps it is for a positive reason, to do with its usability or an unusual capability that it has? Or perhaps it is for a negative reason, such as its inability to draw UML diagrams that are formally correct, in some way?
+1. Give its name and URL.
+2. In no more than 200 words, explain why you think this tool is particularly interesting. 3. Give one UML diagram made in your chosen tool, to illustrate what you say.
+File names and formats you submit for this question may be whichever are convenient for you from: • C.pdf
+• C.docx • C.txt • C.png • C.jpg
+Rule: Do not submit files with any other name or format; they will not be marked. If (unlikely!) your tool cannot export a diagram as any of the given formats, taking a screenshot of the diagram in the tool is an acceptable way to produce your file.
+My preference: If you submit your text as a .pdf or a .docx, it would be convenient for me if you embed your diagram in the document along with your text, so that you submit only the one file. If you prefer to submit a .txt rather than a .pdf or .docx, of course you’ll need to submit a separate file (as .png, .jpg or .pdf) containing your diagram.

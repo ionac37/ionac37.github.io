@@ -1,0 +1,12 @@
+title Question A2
+
+actor "s:Scheduler" as s
+participant "p1:Participant" as p1
+participant "p2:Participant" as p2
+
+s->s:call=createZoomCall()
+s->p1:join(call)
+p1-->s:true
+
+s->p2:join(call)
+p2-->s:true

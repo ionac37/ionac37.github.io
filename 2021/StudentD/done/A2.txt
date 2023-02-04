@@ -1,0 +1,12 @@
+
+actor "s : Scheduler" as s
+participant "c: ZoomCall" as c
+participant "p1: Participant" as p1
+participant "p2: Participant" as p2
+
+s->c:new ZoomCall()
+c-->s: c = ZoomCall()
+s->p1:join(c)
+p1-->s:true
+s->p2:join(c)
+p2-->s:true

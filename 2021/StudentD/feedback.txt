@@ -1,0 +1,31 @@
+A1: 4
+
+You're showing interface realization with the dashed line, not generalization - given that VideoCall is an abstract class not an interface the latter is what you need.
+
+At the VideoCall end of the association with Participant, you need multiplicity 0..1, because the question said that a participant could be in at most one video call.
+
+You do not have information about navigability, so probably better not to show any.
+
+A2: 3
+
+Show the object creation as usual with a <<create>> message to a new lifeline, that starts at the point of creation.
+
+B1: 2
+
+Arrow heads on transitions in state diagrams should be -> not LucidChart's default solid triangle or anything else.
+
+Be clear that the labels on your transitions are events, in this case, message calls. E.g. use exactly join(v), and where you invent new method names, use consistent capitalisation and make sure what you use on the transitions is exactly consistent with what you have in your class diagram and your note about what else you are adding.
+
+B2: 2
+
+You were told not to add things you didn't need, so you should not add a new attribute to represent whether the participant is in a call: that is already there in the property that is the association end connecting Participant to VideoCall in your class diagram.
+
+Note that context Participant inv: is not quite right: this whole state diagram is in the context of Participant (so you can assume that), and you are not defining an invariant of the class which is what inv: means.
+
+Since the whole diagram is about a particular Participant, when you want to talk about a VideoCall you have to specify which one.
+
+Good attempt at the OCL even though it isn't quite right!
+
+Total: 11
+
+

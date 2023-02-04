@@ -1,0 +1,16 @@
+title Part A Question 2
+
+actor "s : Scheduler" as q
+
+
+participant "c : VideoCall" as c
+participant "p1 : Participant" as p1
+participant "p2 : Participant" as p2
+
+
+q->c:VideoCall = createZoomCall()
+c-->>q:
+q->p1:joined = join(c)
+p1-->>q:True
+q->p2:join(c)
+p2-->>q:True

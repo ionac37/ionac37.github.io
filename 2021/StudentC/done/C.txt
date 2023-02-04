@@ -1,0 +1,6 @@
+https://online.visual-paradigm.com/app/diagrams/#diagram:proj=0&type=ClassDiagram
+
+I found Visual Paradigm as an alternative for class diagram editing,
+however comparing it with LucidChart I found the navigability and ease of use more difficult and clunky.
+I believe that  in order for a tool to be effective for me the UI should
+be simple to use and have clarity in order to reduce time for learning.

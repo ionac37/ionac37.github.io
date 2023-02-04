@@ -1,0 +1,37 @@
+A1: 4
+
+You're showing a dependency between Participant and VideoCall not an Association. Now there always is a dependency when there's an association - but dependency is not an instance-level concept so it doesn't then make sense to put multiplicities on a dependency arrow.
+
+At the VideoCall end of the association with Participant, you need multiplicity 0..1, because the question said that a participant could be in at most one video call.
+
+A2: 2
+
+Missing types in lifelines: you need e.g. p1:Participant
+
+You create an instance of ZoomCall so show the lifeline as an instance.
+
+Strictly speaking the create message wants a <<create>> label or similar and is given a -> head - see solution video.
+
+Use the join method that you already know about from A1.
+
+The source of both join messages should be the scheduler.
+
+Use the solid arrow head for synchronous messages.
+
+B1: 2
+
+Why did you add joinCall when there's already a join??
+
+You were told not to add things you didn't need, so you should not add a new attribute to represent whether the participant is in a call: that is already there in the property that is the association end connecting Participant to VideoCall in your class diagram.
+
+B2: 1
+
+Note that context Participant inv: is not quite right: this whole state diagram is in the context of Participant (so you can assume that), and you are not defining an invariant of the class which is what inv: means.
+
+You definitely don't want to use Participant.allInstances because that will make the constraint depend on the states of all objects of class Participant, not only those that are on the same call as self!
+
+
+Total: 9
+
+
+

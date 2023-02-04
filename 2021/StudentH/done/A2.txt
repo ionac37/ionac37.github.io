@@ -1,0 +1,13 @@
+title A2
+
+participant "s : Scheduler" as s
+participant "p1 : Participant" as p1
+participant "p2 : Participant" as p2
+participant "z : ZoomCall" as z
+
+s->z: create()
+s<--z: 
+s->p1: invite(z)
+s<--p1: success
+s->p2: invite(z)
+s<--p2: success

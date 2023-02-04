@@ -1,0 +1,29 @@
+A1: 5
+
+At the VideoCall end of the association with Participant, you need multiplicity 0..1, because the question said that a participant could be in at most one video call.
+
+A2: 3
+
+Don't forget the argument to join: you must pass the very same ZoomCall object that you just created.
+
+Don't destroy the ZoomCall - you were not told to. NB a <<create>> is special - you do not need to show a reply to it.
+
+B1: 2
+
+Be clear that the labels on your transitions are events, in this case, message calls. E.g. use exactly join(v), and where you invent new method names, use consistent capitalisation and make sure what you use on the transitions is exactly consistent with what you have in your class diagram and your note about what else you are adding.
+
+The extra state you have immediately after the start state is redundant - note in particular that it has no event on the transition leading out of it, which is a warning sign. Just leave it out and put the start state transitioning directly into not on a call.
+
+B2: 0
+
+You were told not to add things you didn't need, so you should not add a new attribute to represent whether the participant is in a call: that is already there in the property that is the association end connecting Participant to VideoCall in your class diagram.
+
+OCL on the unmuting transition: valiant attempt but not close enough to making sense for marks.
+
+You definitely don't want to use Participant.allInstances because that will make the constraint depend on the states of all objects of class Participant, not only those that are on the same call as self!
+
+It isn't the role of a constraint to assign a new value to an attribute.
+
+Total: 10
+
+
