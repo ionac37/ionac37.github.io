@@ -1,2 +1,0 @@
-Tool is app.creately
-URL is app.creately.com
