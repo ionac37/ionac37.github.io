@@ -25,39 +25,46 @@
       border: 2px solid #0A335F;
       border-radius: 200px;
       font-size: medium;
-      margin-top: 30%;
+      margin-top: 1%;
       background-color: #9CA9BA;
     }
     .background {
       background-color: #f2f3f5;
     }
+    .titletext {
+      font-size: 175%;
+      margin-top: 1%;
+    }
     a {
         all: unset;
+    }
+    .vertical-center {
+      margin-top: 9%;
     }
     </style>
 </head>
 
 <body class="background">
-    <div class="container text-color">
-        <div class="page-header">
-            <div class="row justify-content-lg-center">
-                <div class="col-lg-4"> <img src="uofe.png" width="370" height="90"> </div>
-                <div class="col-lg-7 text-center"> <h3> <b> Software Design and Modelling (2022-2023)[SEM2] </b><br> 
-                    Lab Assessment Revision Quiz </h3> </div>
-                <a href="/help.html">
-                    <div class="col-lg-1"><button id="beginHelpButton" class="btn helpButton"><b>?</b></button></div>
-                </a>
-            </div> 
-        </div>   
-    </div>
+  <div class="container-fluid text-color page-header">
+    <div class="flex-row justify-content-lg-center">
+      <div class="col-lg-3"> <img src="uofe.png" width="90%" height="90%"> </div>
+      <div class="col-lg-6 text-center titletext"> <b> Software Design and Modelling (2022-2023)[SEM2] </b><br> 
+        Lab Assessment Revision Quiz 
+      </div>
+      <div class="col-lg-2"></div>
+      <a href="/help.html">
+        <div class="col-lg-1"><button id="beginHelpButton" class="btn helpButton"><b>?</b></button></div>
+      </a>
+    </div> 
+  </div>
 
-    <div class="container text-center">
-        <h2> <br><br><br>Welcome to the Software Design and Modelling <br> Lab Assessment revision quiz! <br><br></h2>
+    <div class="container-fluid text-center vertical-center">
+        <div><h2>Welcome to the Software Design and Modelling <br> Lab Assessment revision quiz!<br><br></h2></div>
         <div class="large"> The quiz will take you through previous year’s lab assessment questions and provide <br>
             student responses one at a time. For each response you must select the correct <br> feedback the student received 
-            from the statements provided. <br><br>
+            from the statements provided. <br><br><br>
         </div>
-        <div>
+        <div">
             <a href="/questions.html">
                 <button id="beginButton" class="btn btn-lg startButton">Begin</button>
             </a>
