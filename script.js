@@ -145,7 +145,7 @@ const questions = [
             { image: '/2021/StudentJ/done/A1.JPG', correct: [4] },
             { image: '/2021/StudentK/done/A1.JPG', correct: [4] },
             { image: '/2021/StudentL/done/A1.JPG', correct: [9] },
-            { image: '/2021/StudentM/done/A1.jpg', correct: [4] },
+            { image: '/2021/StudentM/done/A1.JPG', correct: [4] },
             { image: '/2021/StudentN/done/A1.JPG', correct: [7, 8] },
             { image: '/2021/StudentO/done/A1.JPG', correct: [9] },
             { image: '/2021/StudentP/done/A1.JPG', correct: [9] },
