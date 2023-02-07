@@ -28,7 +28,7 @@
       border: 2px solid #0A335F;
       border-radius: 200px;
       font-size: medium;
-      margin-top: 30%;
+      margin-top: 1%;
       background-color: #9CA9BA;
     }
     .zoomButton {
@@ -44,24 +44,25 @@
     }
     .img {
       border: 3px solid #0A335F;
+      width: 90%;
+      height: 20vw;
     }
     .img-holder {position: relative;}
     .img-holder .nextButton {
         position: absolute;
         bottom: 3%; 
-        right: 6%; 
+        right: 12%; 
     }
     .img-holder .zoomButton {
         position: absolute;
         bottom: 3%;
-        right: 90%;
+        right: 91%;
     }
     .checkContainer {
-      width: 550px;
-      height: 320px;
       background-color: #A9A9A9;
       border-radius: 20px;
       overflow-y: scroll;
+      height: 20vw;
     }
     .checktext {
       margin: 10px;
@@ -95,194 +96,203 @@
       border-width: 10px;
       border-style: solid;
     }
+    .titletext {
+      font-size: 175%;
+      margin-top: 1%;
+    }
+    .vertical-center {
+      margin-left: 7%;
+      margin-right: 7%;
+    }
+    .medium {
+      font-size: 110%;
+    }
     </style>
 </head>
 
 <body class="background">
-    <div class="container text-color">
-        <div class="page-header">
-            <div class="row justify-content-lg-center">
-                <div class="col-lg-4"> <img src="uofe.png" width="370" height="90"> </div>
-                <div class="col-lg-7 text-center"> <h3> <b> Software Design and Modelling (2022-2023)[SEM2] </b><br> 
-                    Lab Assessment Revision Quiz </h3> </div>
-                  <a href="/help.html">
-                      <div class="col-lg-1"><button id="questionHelpButton" class="btn helpButton"><b>?</b></button></div>
-                  </a>
-            </div> 
-        </div>   
+  <div class="container-fluid text-color page-header">
+    <div class="flex-row justify-content-lg-center">
+      <div class="col-lg-3"> <img src="uofe.png" width="90%" height="90%"> </div>
+      <div class="col-lg-6 text-center titletext"> <b> Software Design and Modelling (2022-2023)[SEM2] </b><br> 
+        Lab Assessment Revision Quiz 
+      </div>
+      <div class="col-lg-2"></div>
+      <a href="/help.html">
+        <div class="col-lg-1"><button id="beginHelpButton" class="btn helpButton"><b>?</b></button></div>
+      </a>
+    </div> 
+  </div>
+
+  <div id="questionContainer" class="vertical-center container-fluid cont">
+    <div class="row">
+      <div class="col-lg-3"> <h1 id="questionHead">Question A1</h1> </div>
+      <div class="col-lg-1"> 
+        <button id="nextQuestion" class="btn nextButton hide">Next Question <span class="glyphicon glyphicon-chevron-right"></span></button> 
+        <a href="/finish.html">
+          <button id="finishButton" class="btn finishButton hide">Finish</button> 
+        </a>
+      </div>
     </div>
-
-    <div id="questionContainer" class="container">
-      <div class="row">
-        <div class="col-lg-3"> <h2 id="questionHead">Question A1</h2> </div>
-        <div class="col-lg-1"> 
-          <button id="nextQuestion" class="btn nextButton hide">Next Question <span class="glyphicon glyphicon-chevron-right"></span></button> 
-          <a href="/finish.html">
-            <button id="finishButton" class="btn finishButton hide">Finish</button> 
-          </a>
-        </div>
-      </div>
-      <div id="question"> In LucidChart draw a UML class diagram showing: <br>
-        (a) a class Participant with a private attribute name of type String and a public operation join taking a VideoCall as argument and returning a boolean <br>
-        (b) an abstract class VideoCall <br>
-        (c) concrete subclasses ZoomCall and TeamsCall of VideoCall <br>
-        (d) an appropriate relationship between VideoCall, ZoomCall and TeamsCall <br>
-        (e) an appropriate relationship between Participant and VideoCall, demonstrating that at any one time a given participant can be in at most one video call, while a video call may have any number of participants (including zero, say, to account for scheduled calls).<br><br>
-      </div>
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="img-holder">
-            <img id="answerImage" src="/2021/StudentA/done/A1.JPG" width="531" height="320" class="img">
-            <button id="nextAnswer" class="btn nextButton hide">Next Student Answer <span class="glyphicon glyphicon-chevron-right"></span></button>
-            <button class="btn zoomButton text-center" id="zoomInButton" data-toggle="modal" data-target="#zoomModal"><span class="glyphicon glyphicon-resize-full"></span></button>
-
-            <div class="modal fade" id="zoomModal" tabindex="-1" role="dialog" aria-labelledby="zoomModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                <div class="modal-content">
-                  <div class="modal-body">
-                    <img id="modalImage" src="/2021/StudentA/done/A1.JPG" width="100%" height="100%">
-                  </div>
-                    <button class="btn zoomButton text-center" id="zoomOutButton" data-dismiss="modal" aria-label="Close"><span class="glyphicon glyphicon-resize-small"></span></button>
+    <div id="question" class="medium"> In LucidChart draw a UML class diagram showing: <br>
+      (a) a class Participant with a private attribute name of type String and a public operation join taking a VideoCall as argument and returning a boolean <br>
+      (b) an abstract class VideoCall <br>
+      (c) concrete subclasses ZoomCall and TeamsCall of VideoCall <br>
+      (d) an appropriate relationship between VideoCall, ZoomCall and TeamsCall <br>
+      (e) an appropriate relationship between Participant and VideoCall, demonstrating that at any one time a given participant can be in at most one video call, while a video call may have any number of participants (including zero, say, to account for scheduled calls).<br><br>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="img-holder">
+          <img id="answerImage" src="/2021/StudentA/done/A1.JPG" class="img">
+          <button id="nextAnswer" class="btn nextButton hide">Next Student Answer <span class="glyphicon glyphicon-chevron-right"></span></button>
+          <button class="btn zoomButton text-center" id="zoomInButton" data-toggle="modal" data-target="#zoomModal"><span class="glyphicon glyphicon-resize-full"></span></button>
+          <div class="modal fade" id="zoomModal" tabindex="-1" role="dialog" aria-labelledby="zoomModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <img id="modalImage" src="/2021/StudentA/done/A1.JPG" width="100%" height="100%">
                 </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        <div class="col-lg-5">
-          <div class="checkContainer" id="checkContainer">
-            <div class="checktext">
-              <h4>Tick the feedback statements you think this submission received (scroll for more):<br></h4>
-              <div id="checks">
-                <div class="checkbox" id="checkbox1">
-                  <label><br><input type="checkbox" value="" id="box1"><label id="label1">Perfect!</label><br><br></label>
-                </div>
-                <div class="checkbox" id="checkbox2">
-                  <label><input type="checkbox" value="" id="box2"><label id="label2">You need a Generalization, shown with an unfilled triangle head, between ZoomCall, TeamsCall and VideoCall. If you use a -> head you are showing a navigable Association which is a completely different thing.</label><br><br></label>
-                </div>
-                <div class="checkbox" id="checkbox3">
-                  <label><input type="checkbox" value="" id="box3"><label id="label3">You're showing interface realization with the dashed line, not generalization - given that VideoCall is an abstract class not an interface the latter is what you need.</label><br><br></label>
-                </div>
-                <div class="checkbox" id="checkbox4">
-                  <label><input type="checkbox" value="" id="box4"><label id="label4">At the VideoCall end of the association with Participant, you need multiplicity 0..1, because the question said that a participant could be in at most one video call.</label><br><br></label>
-                </div>
-                <div class="checkbox" id="checkbox5">
-                  <label><input type="checkbox" value="" id="box5"> <label id="label5">You're showing a dependency between Participant and VideoCall not an Association. Now there always is a dependency when there's an association - but dependency is not an instance-level concept so it doesn't then make sense to put multiplicities on a dependency arrow.</label><br><br></label>
-                </div>
-                <div class="checkbox" id="checkbox6">
-                  <label><input type="checkbox" value="" id="box6"><label id="label6">You do not have information about navigability, so probably better not to show any.</label><br><br></label>
-                </div>
-                <div class="checkbox" id="checkbox7">
-                  <label><input type="checkbox" value="" id="box7"><label id="label7">ZoomCall and TeamsCall should not be abstract, only VideoCall.</label><br><br></label>
-                </div>
-                <div class="checkbox" id="checkbox8">
-                  <label><input type="checkbox" value="" id="box8"><label id="label8">It is arguable, but I don't think an aggregation between Participant and VideoCall is really appropriate. A Participant is not really a *part* of a VideoCall, even though we use the phrase "to take part in".</label><br><br></label>
-                </div>
-                <div class="checkbox" id="checkbox9">
-                  <label><input type="checkbox" value="" id="box9"><label id="label9">Really you should name the association (or alternatively the association ends).</label><br><br></label>
-                </div>
-                <div class="checkbox hide" id="checkbox10">
-                  <label><input type="checkbox" value="" id="box10"><label id="label10">Perfect!</label><br><br></label>
-                </div>
-                <div class="checkbox hide" id="checkbox11">
-                  <label><input type="checkbox" value="" id="box11"><label id="label11">Perfect!</label><br><br></label>
-                </div>
-                <div class="checkbox hide" id="checkbox12">
-                  <label><input type="checkbox" value="" id="box12"><label id="label12">Perfect!</label><br><br></label>
-                </div>
-                <div class="checkbox hide" id="checkbox13">
-                  <label><input type="checkbox" value="" id="box13"><label id="label13">Perfect!</label><br><br></label>
-                </div>
-                <div class="checkbox hide" id="checkbox14">
-                  <label><input type="checkbox" value="" id="box14"><label id="label14">Perfect!</label><br><br></label>
-                </div>
-                <div class="checkbox hide" id="checkbox15">
-                  <label><input type="checkbox" value="" id="box15"><label id="label15">Perfect!</label><br><br></label>
-                </div>
-                <div class="checkbox hide" id="checkbox16">
-                  <label><input type="checkbox" value="" id="box16"><label id="label16">Perfect!</label><br><br></label>
-                </div>
-                <div class="checkbox hide" id="checkbox17">
-                  <label><input type="checkbox" value="" id="box17"><label id="label17">Superfluous extra class.</label><br><br></label>
-                </div>
-                <div class="checkbox hide" id="checkbox18">
-                  <label><input type="checkbox" value="" id="box18"><label id="label18">Perfect!</label><br><br></label>
-                </div>
-                <div class="checkbox hide" id="checkbox19">
-                  <label><input type="checkbox" value="" id="box19"><label id="label19">Perfect!</label><br><br></label>
-                </div>
-                <div class="checkbox hide" id="checkbox20">
-                  <label><input type="checkbox" value="" id="box20"><label id="label20">Perfect!</label><br><br></label>
-                </div>
-                <div class="checkbox hide" id="checkbox21">
-                  <label><input type="checkbox" value="" id="box21"><label id="label21">Perfect!</label><br><br></label>
-                </div>
-                <div class="checkbox hide" id="checkbox22">
-                  <label><input type="checkbox" value="" id="box22"><label id="label22">Perfect!</label><br><br></label>
-                </div>
-                <div class="checkbox hide" id="checkbox23">
-                  <label><input type="checkbox" value="" id="box23"><label id="label23">Perfect!</label><br><br></label>
-                </div>
-                <div class="checkbox hide" id="checkbox24">
-                  <label><input type="checkbox" value="" id="box24"><label id="label24">Perfect!</label><br><br></label>
-                </div>
-                <div class="checkbox hide" id="checkbox25">
-                  <label><input type="checkbox" value="" id="box25"><label id="label25">Perfect!</label><br><br></label>
-                </div>
-                <div class="checkbox hide" id="checkbox26">
-                  <label><input type="checkbox" value="" id="box26"><label id="label26">Perfect!</label><br><br></label>
-                </div>
-                <div class="checkbox hide" id="checkbox27">
-                  <label><input type="checkbox" value="" id="box27"><label id="label27">Perfect!</label><br><br></label>
-                </div>
-                <div class="checkbox hide" id="checkbox28">
-                  <label><input type="checkbox" value="" id="box28"><label id="label28">Perfect!</label><br><br></label>
-                </div>
-                <div class="checkbox hide" id="checkbox29">
-                  <label><input type="checkbox" value="" id="box29"><label id="label29">Perfect!</label><br><br></label>
-                </div>
-                <div class="checkbox hide" id="checkbox30">
-                  <label><input type="checkbox" value="" id="box30"><label id="label30">Perfect!</label><br><br></label>
-                </div>
-                <div class="checkbox hide" id="checkbox31">
-                  <label><input type="checkbox" value="" id="box31"><label id="label31">Perfect!</label><br><br></label>
-                </div>
-                <div class="checkbox hide" id="checkbox32">
-                  <label><input type="checkbox" value="" id="box32"><label id="label32">Perfect!</label><br><br></label>
-                </div>
-                <div class="checkbox hide" id="checkbox33">
-                  <label><input type="checkbox" value="" id="box33"><label id="label33">Perfect!</label><br><br></label>
-                </div>
-                <div class="checkbox hide" id="checkbox34">
-                  <label><input type="checkbox" value="" id="box34"><label id="label34">Perfect!</label><br><br></label>
-                </div>
-                <div class="checkbox hide" id="checkbox35">
-                  <label><input type="checkbox" value="" id="box35"><label id="label35">Perfect!</label><br><br></label>
-                </div>
-                <div class="checkbox hide" id="checkbox36">
-                  <label><input type="checkbox" value="" id="box36"><label id="label36">Perfect!</label><br><br></label>
-                </div>
-                <div class="checkbox hide" id="checkbox37">
-                  <label><input type="checkbox" value="" id="box37"><label id="label37">Perfect!</label><br><br></label>
-                </div>
-                <div class="checkbox hide" id="checkbox38">
-                  <label><input type="checkbox" value="" id="box38"><label id="label38">Perfect!</label><br><br></label>
-                </div>
-                <div class="checkbox hide" id="checkbox39">
-                  <label><input type="checkbox" value="" id="box39"><label id="label39">Perfect!</label><br><br></label>
-                </div>
-                <div class="checkbox hide" id="checkbox40">
-                  <label><input type="checkbox" value="" id="box40"><label id="label40">Perfect!</label><br></label>
-                </div>
-              </div>
-              <div class="hide" id="noAnswer">Please select an answer!<br><br></div>
-              <div class="row">
-                <div class="col-lg-6"><button class="btn btn-block btnMark" id="markButton">Mark Selection</button></div>
-                <div class="col-lg-6"><button class="btn btn-block btnReveal hide" id="revealButton">Reveal Correct Answer</button></div>
+                  <button class="btn zoomButton text-center" id="zoomOutButton" data-dismiss="modal" aria-label="Close"><span class="glyphicon glyphicon-resize-small"></span></button>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="col-lg-6">
+        <div id="checkContainer" class="checkContainer">
+          <div class="checktext">
+            <h4>Tick the feedback statements you think this submission received (scroll for more):<br></h4>
+            <div id="checks">
+              <div class="checkbox" id="checkbox1">
+                <label><br><input type="checkbox" value="" id="box1"><label id="label1">Perfect!</label><br><br></label>
+              </div>
+              <div class="checkbox" id="checkbox2">
+                <label><input type="checkbox" value="" id="box2"><label id="label2">You need a Generalization, shown with an unfilled triangle head, between ZoomCall, TeamsCall and VideoCall. If you use a -> head you are showing a navigable Association which is a completely different thing.</label><br><br></label>
+              </div>
+              <div class="checkbox" id="checkbox3">
+                <label><input type="checkbox" value="" id="box3"><label id="label3">You're showing interface realization with the dashed line, not generalization - given that VideoCall is an abstract class not an interface the latter is what you need.</label><br><br></label>
+              </div>
+              <div class="checkbox" id="checkbox4">
+                <label><input type="checkbox" value="" id="box4"><label id="label4">At the VideoCall end of the association with Participant, you need multiplicity 0..1, because the question said that a participant could be in at most one video call.</label><br><br></label>
+              </div>
+              <div class="checkbox" id="checkbox5">
+                <label><input type="checkbox" value="" id="box5"> <label id="label5">You're showing a dependency between Participant and VideoCall not an Association. Now there always is a dependency when there's an association - but dependency is not an instance-level concept so it doesn't then make sense to put multiplicities on a dependency arrow.</label><br><br></label>
+              </div>
+              <div class="checkbox" id="checkbox6">
+                <label><input type="checkbox" value="" id="box6"><label id="label6">You do not have information about navigability, so probably better not to show any.</label><br><br></label>
+              </div>
+              <div class="checkbox" id="checkbox7">
+                <label><input type="checkbox" value="" id="box7"><label id="label7">ZoomCall and TeamsCall should not be abstract, only VideoCall.</label><br><br></label>
+              </div>
+              <div class="checkbox" id="checkbox8">
+                <label><input type="checkbox" value="" id="box8"><label id="label8">It is arguable, but I don't think an aggregation between Participant and VideoCall is really appropriate. A Participant is not really a *part* of a VideoCall, even though we use the phrase "to take part in".</label><br><br></label>
+              </div>
+              <div class="checkbox" id="checkbox9">
+                <label><input type="checkbox" value="" id="box9"><label id="label9">Really you should name the association (or alternatively the association ends).</label><br><br></label>
+              </div>
+              <div class="checkbox hide" id="checkbox10">
+                <label><input type="checkbox" value="" id="box10"><label id="label10">Perfect!</label><br><br></label>
+              </div>
+              <div class="checkbox hide" id="checkbox11">
+                <label><input type="checkbox" value="" id="box11"><label id="label11">Perfect!</label><br><br></label>
+              </div>
+              <div class="checkbox hide" id="checkbox12">
+                <label><input type="checkbox" value="" id="box12"><label id="label12">Perfect!</label><br><br></label>
+              </div>
+              <div class="checkbox hide" id="checkbox13">
+                <label><input type="checkbox" value="" id="box13"><label id="label13">Perfect!</label><br><br></label>
+              </div>
+              <div class="checkbox hide" id="checkbox14">
+                <label><input type="checkbox" value="" id="box14"><label id="label14">Perfect!</label><br><br></label>
+              </div>
+              <div class="checkbox hide" id="checkbox15">
+                <label><input type="checkbox" value="" id="box15"><label id="label15">Perfect!</label><br><br></label>
+              </div>
+              <div class="checkbox hide" id="checkbox16">
+                <label><input type="checkbox" value="" id="box16"><label id="label16">Perfect!</label><br><br></label>
+              </div>
+              <div class="checkbox hide" id="checkbox17">
+                <label><input type="checkbox" value="" id="box17"><label id="label17">Superfluous extra class.</label><br><br></label>
+              </div>
+              <div class="checkbox hide" id="checkbox18">
+                <label><input type="checkbox" value="" id="box18"><label id="label18">Perfect!</label><br><br></label>
+              </div>
+              <div class="checkbox hide" id="checkbox19">
+                <label><input type="checkbox" value="" id="box19"><label id="label19">Perfect!</label><br><br></label>
+              </div>
+              <div class="checkbox hide" id="checkbox20">
+                <label><input type="checkbox" value="" id="box20"><label id="label20">Perfect!</label><br><br></label>
+              </div>
+              <div class="checkbox hide" id="checkbox21">
+                <label><input type="checkbox" value="" id="box21"><label id="label21">Perfect!</label><br><br></label>
+              </div>
+              <div class="checkbox hide" id="checkbox22">
+                <label><input type="checkbox" value="" id="box22"><label id="label22">Perfect!</label><br><br></label>
+              </div>
+              <div class="checkbox hide" id="checkbox23">
+                <label><input type="checkbox" value="" id="box23"><label id="label23">Perfect!</label><br><br></label>
+              </div>
+              <div class="checkbox hide" id="checkbox24">
+                <label><input type="checkbox" value="" id="box24"><label id="label24">Perfect!</label><br><br></label>
+              </div>
+              <div class="checkbox hide" id="checkbox25">
+                <label><input type="checkbox" value="" id="box25"><label id="label25">Perfect!</label><br><br></label>
+              </div>
+              <div class="checkbox hide" id="checkbox26">
+                <label><input type="checkbox" value="" id="box26"><label id="label26">Perfect!</label><br><br></label>
+              </div>
+              <div class="checkbox hide" id="checkbox27">
+                <label><input type="checkbox" value="" id="box27"><label id="label27">Perfect!</label><br><br></label>
+              </div>
+              <div class="checkbox hide" id="checkbox28">
+                <label><input type="checkbox" value="" id="box28"><label id="label28">Perfect!</label><br><br></label>
+              </div>
+              <div class="checkbox hide" id="checkbox29">
+                <label><input type="checkbox" value="" id="box29"><label id="label29">Perfect!</label><br><br></label>
+              </div>
+              <div class="checkbox hide" id="checkbox30">
+                <label><input type="checkbox" value="" id="box30"><label id="label30">Perfect!</label><br><br></label>
+              </div>
+              <div class="checkbox hide" id="checkbox31">
+                <label><input type="checkbox" value="" id="box31"><label id="label31">Perfect!</label><br><br></label>
+              </div>
+              <div class="checkbox hide" id="checkbox32">
+                <label><input type="checkbox" value="" id="box32"><label id="label32">Perfect!</label><br><br></label>
+              </div>
+              <div class="checkbox hide" id="checkbox33">
+                <label><input type="checkbox" value="" id="box33"><label id="label33">Perfect!</label><br><br></label>
+              </div>
+              <div class="checkbox hide" id="checkbox34">
+                <label><input type="checkbox" value="" id="box34"><label id="label34">Perfect!</label><br><br></label>
+              </div>
+              <div class="checkbox hide" id="checkbox35">
+                <label><input type="checkbox" value="" id="box35"><label id="label35">Perfect!</label><br><br></label>
+              </div>
+              <div class="checkbox hide" id="checkbox36">
+                <label><input type="checkbox" value="" id="box36"><label id="label36">Perfect!</label><br><br></label>
+              </div>
+              <div class="checkbox hide" id="checkbox37">
+                <label><input type="checkbox" value="" id="box37"><label id="label37">Perfect!</label><br><br></label>
+              </div>
+              <div class="checkbox hide" id="checkbox38">
+                <label><input type="checkbox" value="" id="box38"><label id="label38">Perfect!</label><br><br></label>
+              </div>
+              <div class="checkbox hide" id="checkbox39">
+                <label><input type="checkbox" value="" id="box39"><label id="label39">Perfect!</label><br><br></label>
+              </div>
+              <div class="checkbox hide" id="checkbox40">
+                <label><input type="checkbox" value="" id="box40"><label id="label40">Perfect!</label><br></label>
+              </div>
+            </div>
+            <div class="hide" id="noAnswer">Please select an answer.<br><br></div>
+            <div class="row">
+              <div class="col-lg-6"><button class="btn btn-block btnMark" id="markButton">Mark Selection</button></div>
+              <div class="col-lg-6"><button class="btn btn-block btnReveal hide" id="revealButton">Reveal Correct Answer</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
