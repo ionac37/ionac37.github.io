@@ -8,6 +8,9 @@ const answers = document.getElementById('checks')
 const finishButton = document.getElementById('finishButton')
 const markButton = document.getElementById('markButton')
 const revealButton = document.getElementById('revealButton')
+const zoomButton = document.getElementById("zoomInButton")
+const zoomOutButton = document.getElementById("zoomOutButton")
+const bigImage = document.getElementById("mydiv")
 
 let currentQuestion = 0
 let currentAnswer = 0
@@ -16,6 +19,16 @@ nextQuestionButton.addEventListener('click', nextQuestion)
 nextAnswerButton.addEventListener('click', nextAnswer)
 markButton.addEventListener('click', markAnswer)
 revealButton.addEventListener('click', revealAnswer)
+zoomButton.addEventListener('click', zoom)
+zoomOutButton.addEventListener('click', zoomOut)
+
+function zoom() {
+    bigImage.classList.remove('hide')
+}
+
+function zoomOut() {
+    bigImage.classList.add('hide')
+}
 
 function nextQuestion() {
     currentQuestion++
@@ -24,10 +37,6 @@ function nextQuestion() {
     getNextCheckOptions()
     currentAnswer = -1
     nextAnswer()
-    if (currentQuestion > questions.length-2) {
-        nextQuestionButton.classList.add('hide')
-        finishButton.classList.remove('hide')
-    }
 }
 
 function getNextCheckOptions() {
@@ -123,10 +132,62 @@ function markAnswer() {
         if (currentAnswer < questions[currentQuestion].answers.length-1) {
             nextAnswerButton.classList.remove('hide')
         }
+        if (currentQuestion > questions.length-2) {
+            nextQuestionButton.classList.add('hide')
+            finishButton.classList.remove('hide')
+        }
     } else {
         document.getElementById('noAnswer').classList.remove('hide')
     }
 }
+
+
+// Make the DIV element draggable:
+dragElement(document.getElementById("mydiv"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    // if present, the header is where you move the DIV from:
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    // otherwise, move the DIV from anywhere inside the DIV:
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    // stop moving when mouse button is released:
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+// https://www.w3schools.com/howto/howto_js_draggable.asp
+
+
 
 const questions = [
     {
@@ -134,22 +195,22 @@ const questions = [
         question: 'In LucidChart draw a UML class diagram showing: \n(a) a class Participant with a private attribute name of type String and a public operation join taking a VideoCall as argument and returning a boolean \n(b) an abstract class VideoCall \n(c) concrete subclasses ZoomCall and TeamsCall of VideoCall \n(d) an appropriate relationship between VideoCall, ZoomCall and TeamsCall \n(e) an appropriate relationship between Participant and VideoCall, demonstrating that at any one time a given participant can be in at most one video call, while a video call may have any number of participants (including zero, say, to account for scheduled calls).\n\n',
         answers: [
             { image: '/2021/StudentA/done/A1.JPG', correct: [4, 9] },
-            { image: '/2021/StudentB/done/A1.JPG', correct: [5, 4] },
+            { image: '/2021/StudentB/done/A1.JPG', correct: [5, 4, 9] },
             { image: '/2021/StudentC/done/A1.JPG', correct: [1] },
             { image: '/2021/StudentD/done/A1.JPG', correct: [3, 4, 6] },
             { image: '/2021/StudentE/done/A1.JPG', correct: [4, 9] },
             { image: '/2021/StudentF/done/A1.JPG', correct: [9] },
-            { image: '/2021/StudentG/done/A1.JPG', correct: [3] },
-            { image: '/2021/StudentH/done/A1.JPG', correct: [2, 4] },
+            { image: '/2021/StudentG/done/A1.JPG', correct: [3, 9] },
+            { image: '/2021/StudentH/done/A1.JPG', correct: [2, 4, 9] },
             { image: '/2021/StudentI/done/A1.JPG', correct: [2, 9] },
-            { image: '/2021/StudentJ/done/A1.JPG', correct: [4] },
-            { image: '/2021/StudentK/done/A1.JPG', correct: [4] },
+            { image: '/2021/StudentJ/done/A1.JPG', correct: [4, 9] },
+            { image: '/2021/StudentK/done/A1.JPG', correct: [4, 9] },
             { image: '/2021/StudentL/done/A1.JPG', correct: [9] },
-            { image: '/2021/StudentM/done/A1.JPG', correct: [4] },
-            { image: '/2021/StudentN/done/A1.JPG', correct: [7, 8] },
+            { image: '/2021/StudentM/done/A1.JPG', correct: [4, 9] },
+            { image: '/2021/StudentN/done/A1.JPG', correct: [7, 8, 9] },
             { image: '/2021/StudentO/done/A1.JPG', correct: [9] },
             { image: '/2021/StudentP/done/A1.JPG', correct: [9] },
-            { image: '/2021/StudentQ/done/A1.JPG', correct: [4, 8] },
+            { image: '/2021/StudentQ/done/A1.JPG', correct: [4, 8, 9] },
             { image: '/2021/StudentR/done/A1.JPG', correct: [4, 9] }
         ],
         checkOptions: [
@@ -168,24 +229,24 @@ const questions = [
         number: 'Question A2',
         question: 'Using SequenceDiagram.org, draw a sequence diagram showing lifelines for an actor called s of type Scheduler and for two Participants called p1 and p2. Show that s creates a ZoomCall and then causes first p1 and then p2 to join it: show that they do so successfully. \nYour diagram should illustrate just the example behaviour described: do not use fragments, do not concern yourself with error behaviour. There is no need to show activation bars.\n\n',
         answers: [
-            { image: '/2021/StudentA/done/A2.png', correct: [8, 10, 13] },
-            { image: '/2021/StudentB/done/A2.png', correct: [2, 6, 9, 11, 10, 16] },
-            { image: '/2021/StudentC/done/A2.png', correct: [8, 14] },
+            { image: '/2021/StudentA/done/A2.png', correct: [8, 9, 12] },
+            { image: '/2021/StudentB/done/A2.png', correct: [2, 6, 8, 10, 9, 15] },
+            { image: '/2021/StudentC/done/A2.png', correct: [8, 13] },
             { image: '/2021/StudentD/done/A2.png', correct: [8] },
             { image: '/2021/StudentE/done/A2.png', correct: [1] },
             { image: '/2021/StudentF/done/A2.png', correct: [1] },
-            { image: '/2021/StudentG/done/A2.png', correct: [10, 21] },
-            { image: '/2021/StudentH/done/A2.png', correct: [3, 8, 11] },
-            { image: '/2021/StudentI/done/A2.png', correct: [2, 5, 8, 12, 11, 15] },
+            { image: '/2021/StudentG/done/A2.png', correct: [9, 19] },
+            { image: '/2021/StudentH/done/A2.png', correct: [3, 8, 10] },
+            { image: '/2021/StudentI/done/A2.png', correct: [2, 5, 8, 11, 10, 14] },
             { image: '/2021/StudentJ/done/A2.png', correct: [8] },
-            { image: '/2021/StudentK/done/A2.png', correct: [8, 4, 22] },
-            { image: '/2021/StudentL/done/A2.png', correct: [7, 8, 11, 17] },
-            { image: '/2021/StudentM/done/A2.png', correct: [15, 18] },
+            { image: '/2021/StudentK/done/A2.png', correct: [8, 4, 20] },
+            { image: '/2021/StudentL/done/A2.png', correct: [7, 8, 10, 16] },
+            { image: '/2021/StudentM/done/A2.png', correct: [14, 17] },
             { image: '/2021/StudentN/done/A2.png', correct: [8] },
             { image: '/2021/StudentO/done/A2.png', correct: [1] },
             { image: '/2021/StudentP/done/A2.png', correct: [8] },
-            { image: '/2021/StudentQ/done/A2.png', correct: [19, 20] },
-            { image: '/2021/StudentR/done/A2.png', correct: [8, 15] }
+            { image: '/2021/StudentQ/done/A2.png', correct: [8, 18] },
+            { image: '/2021/StudentR/done/A2.png', correct: [8, 14] }
         ],
         checkOptions: [
             { id: '1', text: "Perfect!"},
@@ -195,21 +256,19 @@ const questions = [
             { id: '5', text: "Use ordinary rectangular instances unless told otherwise - the robustness diagram symbols are not standard in UML."},
             { id: '6', text: "You create an instance of ZoomCall so show the lifeline as an instance."},
             { id: '7', text: "ZoomCall is a class name not an instance name!"},
-            { id: '8', text: "Show the object creation as usual with a <<create>> message to a new lifeline, that starts at the point of creation."},
-            { id: '9', text: "Strictly speaking the create message wants a <<create>> label or similar and is given a -> head - see solution video."},
-            { id: '10', text: "The source of both join messages should be the scheduler."},
-            { id: '11', text: "Use the join method that you already know about from A1."},
-            { id: '12', text: "It is the scheduler, not the call, that has to send messages to the participants."},
-            { id: '13', text: "join is a method on Participant, not ZoomCall: your message is going in the wrong direction."},
-            { id: '14', text: "Don't write p1.join etc. - the diagram already shows that the message is going to p1."},
-            { id: '15', text: "Don't forget the argument to join: you must pass the very same ZoomCall object that you just created."},
-            { id: '16', text: "Use the solid arrow head for synchronous messages."},
-            { id: '17', text: "Why would a message ever have its own recipient as an argument?"},
-            { id: '18', text: "Don't destroy the ZoomCall - you were not told to. NB a <<create>> is special - you do not need to show a reply to it."},
-            { id: '19', text: "Label the creation message <<create>> - see solution video."},
-            { id: '20', text: "You've invented the connect message, though it's quite a reasonable thing to invent."},
-            { id: '21', text: "Check the notation for return arrows."},
-            { id: '22', text: "You've invented the enterCall message, though it's quite a reasonable thing to invent."}
+            { id: '8', text: "Object creation not shown correctly."},
+            { id: '9', text: "The source of both join messages should be the scheduler."},
+            { id: '10', text: "Use the join method that you already know about from A1."},
+            { id: '11', text: "It is the scheduler, not the call, that has to send messages to the participants."},
+            { id: '12', text: "join is a method on Participant, not ZoomCall: your message is going in the wrong direction."},
+            { id: '13', text: "Don't write p1.join etc. - the diagram already shows that the message is going to p1."},
+            { id: '14', text: "Don't forget the argument to join: you must pass the very same ZoomCall object that you just created."},
+            { id: '15', text: "Use the solid arrow head for synchronous messages."},
+            { id: '16', text: "Why would a message ever have its own recipient as an argument?"},
+            { id: '17', text: "Don't destroy the ZoomCall - you were not told to. NB a <<create>> is special - you do not need to show a reply to it."},
+            { id: '18', text: "You've invented the connect message, though it's quite a reasonable thing to invent."},
+            { id: '19', text: "Check the notation for return arrows."},
+            { id: '20', text: "You've invented the enterCall message, though it's quite a reasonable thing to invent."}
         ]
     },
     {
