@@ -36,6 +36,15 @@
       border-radius: 200px;
       background-color: #9CA9BA;
     }
+    .zoomOutButton {
+      border: 2px solid #0A335F;
+      border-radius: 200px;
+      background-color: #9CA9BA;
+      color: #0A335F;
+      position: absolute;
+      top: 2px;
+      right: 0px;
+    }
     .background {
       background-color: #f2f3f5;
     }
@@ -107,6 +116,22 @@
     .medium {
       font-size: 110%;
     }
+
+    .mydiv {
+      position: absolute;
+      z-index: 9;
+      background-color: #f1f1f1;
+      border: 5px solid #0A335F;
+      text-align: center;
+    }
+    .mydivheader {
+      padding: 10px;
+      cursor: move;
+      z-index: 10;
+      background-color: #A9A9A9;
+      color: #0A335F;
+    }
+
     </style>
 </head>
 
@@ -122,6 +147,16 @@
         <div class="col-lg-1"><button id="beginHelpButton" class="btn helpButton"><b>?</b></button></div>
       </a>
     </div> 
+  </div>
+
+  <!-- Draggable DIV -->
+  <div id="mydiv" class="mydiv hide">
+    <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
+    <div id="mydivheader" class="mydivheader">
+      <b>Click Here To Drag</b>
+      <button class="btn zoomOutButton" id="zoomOutButton"><span class="glyphicon glyphicon-remove"></span></button>
+    </div>
+    <img id="modalImage" src="/2021/StudentA/done/A1.JPG" width="100%" height="100%">
   </div>
 
   <div id="questionContainer" class="vertical-center container-fluid cont">
@@ -147,7 +182,8 @@
           <img id="answerImage" src="/2021/StudentA/done/A1.JPG" class="img">
           <button id="nextAnswer" class="btn nextButton hide">Next Student Answer <span class="glyphicon glyphicon-chevron-right"></span></button>
           <button class="btn zoomButton text-center" id="zoomInButton" data-toggle="modal" data-target="#zoomModal"><span class="glyphicon glyphicon-resize-full"></span></button>
-          <div class="modal fade" id="zoomModal" tabindex="-1" role="dialog" aria-labelledby="zoomModalLabel" aria-hidden="true">
+          
+          <!-- <div class="modal fade" id="zoomModal" tabindex="-1" role="dialog" aria-labelledby="zoomModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
               <div class="modal-content">
                 <div class="modal-body">
@@ -156,7 +192,7 @@
                   <button class="btn zoomButton text-center" id="zoomOutButton" data-dismiss="modal" aria-label="Close"><span class="glyphicon glyphicon-resize-small"></span></button>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="col-lg-6">
