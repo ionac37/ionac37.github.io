@@ -46,9 +46,15 @@ function nextQuestion() {
     } else {
         prevQuestionButton.classList.add('hide')
     }
+    if (currentQuestion > questions.length-2) {
+        nextQuestionButton.classList.add('hide')
+        finishButton.classList.remove('hide')
+    }
 }
 
 function previousQuestion() {
+    nextQuestionButton.classList.remove('hide')
+    finishButton.classList.add('hide')
     currentQuestion--
     console.log(currentQuestion)
     question.innerText = questions[currentQuestion].question
@@ -111,8 +117,6 @@ function nextAnswer() {
     document.getElementById('answerImage').src = questions[currentQuestion].answers[currentAnswer].image
     document.getElementById('modalImage').src = questions[currentQuestion].answers[currentAnswer].image
     revealButton.classList.add('hide')
-    nextAnswerButton.classList.add('hide')
-    nextQuestionButton.classList.add('hide')
     if (currentAnswer > 0) {
         prevAnswerButton.classList.remove('hide')
     } else {
@@ -122,17 +126,13 @@ function nextAnswer() {
 
 function previousAnswer() {
     currentAnswer--
+    nextAnswerButton.classList.remove('hide')
     document.getElementById('checkContainer').classList.remove('allCorrect')
     document.getElementById('checkContainer').classList.remove('markedCorrect')
     getNextCheckOptions()
-    if (currentAnswer > questions[currentQuestion].answers.length-1) {
-        nextAnswerButton.classList.add('hide')
-    }
     document.getElementById('answerImage').src = questions[currentQuestion].answers[currentAnswer].image
     document.getElementById('modalImage').src = questions[currentQuestion].answers[currentAnswer].image
     revealButton.classList.add('hide')
-    nextAnswerButton.classList.add('hide')
-    nextQuestionButton.classList.add('hide')
     if (currentAnswer > 0) {
         prevAnswerButton.classList.remove('hide')
     } else {
@@ -175,13 +175,6 @@ function markAnswer() {
                 document.getElementById('label'+selectedAnswers[i]).classList.remove('correctAnswer')
             }
         }  
-        if (currentQuestion <= questions.length-2) {
-            nextQuestionButton.classList.remove('hide')
-            finishButton.classList.add('hide')
-        }
-        if (currentAnswer < questions[currentQuestion].answers.length-1) {
-            nextAnswerButton.classList.remove('hide')
-        }
         if (currentQuestion > questions.length-2) {
             nextQuestionButton.classList.add('hide')
             finishButton.classList.remove('hide')
@@ -345,7 +338,7 @@ const questions = [
             { image: '/2021/StudentR/done/B.JPG', correct: [4, 5, 3] }
         ],
         checkOptions: [
-            { id: '1', text: "Good"},
+            { id: '1', text: "Good."},
             { id: '2', text: "You need a start pseudostate with a transition into the not in call state."},
             { id: '3', text: "No event is needed on the transition from the start state (this is just object creation)."},
             { id: '4', text: "There wasn't information about a transition to a final state, and it is not obligatory for state diagrams to have such transitions: don't invent."},
