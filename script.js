@@ -11,6 +11,8 @@ const revealButton = document.getElementById('revealButton')
 const zoomButton = document.getElementById("zoomInButton")
 const zoomOutButton = document.getElementById("zoomOutButton")
 const bigImage = document.getElementById("mydiv")
+const prevQuestionButton = document.getElementById("previousQuestion")
+const prevAnswerButton = document.getElementById("previousAnswer")
 
 let currentQuestion = 0
 let currentAnswer = 0
@@ -21,6 +23,8 @@ markButton.addEventListener('click', markAnswer)
 revealButton.addEventListener('click', revealAnswer)
 zoomButton.addEventListener('click', zoom)
 zoomOutButton.addEventListener('click', zoomOut)
+prevQuestionButton.addEventListener('click', previousQuestion)
+prevAnswerButton.addEventListener('click', previousAnswer)
 
 function zoom() {
     bigImage.classList.remove('hide')
@@ -37,6 +41,26 @@ function nextQuestion() {
     getNextCheckOptions()
     currentAnswer = -1
     nextAnswer()
+    if (currentQuestion > 0) {
+        prevQuestionButton.classList.remove('hide')
+    } else {
+        prevQuestionButton.classList.add('hide')
+    }
+}
+
+function previousQuestion() {
+    currentQuestion--
+    console.log(currentQuestion)
+    question.innerText = questions[currentQuestion].question
+    questionHead.innerText = questions[currentQuestion].number
+    getNextCheckOptions()
+    currentAnswer = -1
+    nextAnswer()
+    if (currentQuestion > 0) {
+        prevQuestionButton.classList.remove('hide')
+    } else {
+        prevQuestionButton.classList.add('hide')
+    }
 }
 
 function getNextCheckOptions() {
@@ -55,6 +79,7 @@ function getNextCheckOptions() {
         document.getElementById('checkbox'+i).classList.add('hide')
     }
 }
+
 
 function revealAnswer() {
     document.getElementById('checkContainer').classList.add('markedCorrect')
@@ -88,6 +113,31 @@ function nextAnswer() {
     revealButton.classList.add('hide')
     nextAnswerButton.classList.add('hide')
     nextQuestionButton.classList.add('hide')
+    if (currentAnswer > 0) {
+        prevAnswerButton.classList.remove('hide')
+    } else {
+        prevAnswerButton.classList.add('hide')
+    }
+}
+
+function previousAnswer() {
+    currentAnswer--
+    document.getElementById('checkContainer').classList.remove('allCorrect')
+    document.getElementById('checkContainer').classList.remove('markedCorrect')
+    getNextCheckOptions()
+    if (currentAnswer > questions[currentQuestion].answers.length-1) {
+        nextAnswerButton.classList.add('hide')
+    }
+    document.getElementById('answerImage').src = questions[currentQuestion].answers[currentAnswer].image
+    document.getElementById('modalImage').src = questions[currentQuestion].answers[currentAnswer].image
+    revealButton.classList.add('hide')
+    nextAnswerButton.classList.add('hide')
+    nextQuestionButton.classList.add('hide')
+    if (currentAnswer > 0) {
+        prevAnswerButton.classList.remove('hide')
+    } else {
+        prevAnswerButton.classList.add('hide')
+    }
 }
 
 function markAnswer() {
