@@ -111,8 +111,10 @@ function nextAnswer() {
     document.getElementById('checkContainer').classList.remove('allCorrect')
     document.getElementById('checkContainer').classList.remove('markedCorrect')
     getNextCheckOptions()
-    if (currentAnswer > questions[currentQuestion].answers.length-1) {
+    if (currentAnswer > questions[currentQuestion].answers.length-2) {
         nextAnswerButton.classList.add('hide')
+    } else {
+        nextAnswerButton.classList.remove('hide')
     }
     document.getElementById('answerImage').src = questions[currentQuestion].answers[currentAnswer].image
     document.getElementById('modalImage').src = questions[currentQuestion].answers[currentAnswer].image
