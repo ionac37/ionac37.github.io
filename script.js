@@ -278,7 +278,7 @@ const questions = [
             { image: '/2021/StudentB/done/A2.png', correct: [2, 6, 8, 10, 9, 15] },
             { image: '/2021/StudentC/done/A2.png', correct: [8, 13] },
             { image: '/2021/StudentD/done/A2.png', correct: [8] },
-            { image: '/2021/StudentE/done/A2.png', correct: [1] },
+            { image: '/2021/StudentE/done/A2.png', correct: [11] },
             { image: '/2021/StudentF/done/A2.png', correct: [1] },
             { image: '/2021/StudentG/done/A2.png', correct: [9, 19] },
             { image: '/2021/StudentH/done/A2.png', correct: [3, 8, 10] },
